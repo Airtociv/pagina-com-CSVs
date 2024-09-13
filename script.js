@@ -1,3 +1,20 @@
+class Autor{
+    constructor(id,nome,nascimento){
+        this.id = id;
+        this.nascimento = nascimento;
+        this.nome = nome;
+    }
+
+
+}
+
+var listaAutores = []
+
+
+
+
+
+
 function lerArquivoCSV(arquivo, callback) {
     const leitor = new FileReader();
 
@@ -15,6 +32,9 @@ function converterCSVparaArray(conteudoCSV) {
 
     linhas.forEach(function (linha) {
         const valores = linha.split(',');
+        console.log("id " +valores[0] + " Nome " +valores[1] + " nascimento " + valores[2])
+        let autor = new Autor(valores[0],valores[1],valores[2]);
+        listaAutores.push(autor);
         arrayCSV.push(valores);
     });
 
